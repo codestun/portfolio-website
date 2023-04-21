@@ -1,0 +1,54 @@
+$primary-color: #00aad6;
+
+a {
+  color: $primary-color;
+}
+
+$primary-color-darker: darken($primary-color, 20%);
+
+.bg-darker {
+  background-color: $primary-color-darker;
+}
+
+$primary-color-lighter: lighten($primary-color, 10%);
+
+.bg-lighter {
+  background-color: $primary-color-lighter;
+}
+
+%button-shared {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  @extend %button-shared;
+
+  background-color: $primary-color;
+}
+
+.navigation-list {
+  list-style-type: none;
+  justify-content: centered;
+
+  li {
+    display: inline-block;
+    margin-left: 15px;
+
+    .navigation-list__item {
+      display: block;
+      border-radius: 8%;
+    }
+
+    .navigation-list__item--active {
+      background-color: #d2eff7;
+    }
+  }
+}
