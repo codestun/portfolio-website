@@ -48,6 +48,7 @@ h3 {
 
 h1 {
   font-size: var(--h1);
+  line-height: 1.4;
 }
 
 h2 {
@@ -146,7 +147,7 @@ button:focus,
   align-items: center;
   max-width: 750px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px;
 }
 
 .portrait-wrapper {
@@ -168,9 +169,31 @@ button:focus,
   text-align: center;
 }
 
-span {
+.info-wrapper span {
   background-color: var(--dark-grey);
   color: var(--bg-white);
+}
+
+.text-wrapper {
+  padding: 30px;
+}
+
+.text-wrapper div {
+  background-color: var(--bg-white);
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  padding: 40px;
+  margin: 0 auto;
+  line-height: 2rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 900px;
+}
+
+.text-wrapper span {
+  color: var(--tertiary-color);
+  font-weight: var(--bold-font);
 }
 
 .profile.about-me p {
@@ -191,6 +214,7 @@ span {
   display: flex;
   max-width: 750px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .contact-me-wrapper {
@@ -306,11 +330,15 @@ div.highlightTextOut a:hover::before {
   -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 20px;
 }
 
 .grid__item {
   background-color: var(--bg-white);
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
   padding: 20px;
   margin: 10px;
 }
