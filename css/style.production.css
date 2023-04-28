@@ -129,7 +129,7 @@ button:focus,
 .profile {
   max-width: 700px;
   margin: 0 auto;
-  padding: 80px 30px;
+  padding: 40px 0;
   text-align: center;
   overflow: auto;
 }
