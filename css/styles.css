@@ -19,13 +19,16 @@
 
   /* body */
   --font-family: 'Raleway', sans-serif;
+  --line-height: 1.7rem;
+  --normal-font: 400;
+  --bold-font: 700;
 }
 
 body {
   font-family: var(--font-family);
-  font-weight: 400;
+  font-weight: var(--normal-font);
   font-size: 18px;
-  line-height: 1.6;
+  line-height: var(--line-height);
   background-color: var(--main-bg-color);
   color: var(--primary-color);
 }
@@ -33,7 +36,7 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 700;
+  font-weight: var(--bold-font);
 }
 
 h1 {
@@ -48,35 +51,38 @@ h3 {
   font-size: var(--h3);
 }
 
-ul {
+ul,
+li {
   padding: 0;
   list-style-type: none;
 }
 
+a,
 a:link {
-  /* color: var(--tertiary-color); */
   text-decoration: none;
+  color: var(--tertiary-color);
 }
 
 a:visited {
-  /* visited link */
   color: var(--light-grey);
 }
 
-a:hover,
-a:focus {
-  /* Changing color when hovering over a link */
-  background-color: var(--bg-color-links);
+a:link:hover,
+a:link:focus {
+  color: var(--secondary-color);
+}
+
+a.button {
+  color: var(--bg-white);
 }
 
 a.button:hover,
 a.button:focus {
-  /* Changing color when hovering over a link */
   background-color: var(--tertiary-color);
+  color: var(--bg-white);
 }
 
 a:active {
-  /* selected link */
   color: var(--primary-color);
 }
 
@@ -211,8 +217,6 @@ label {
 /* ----------- Navigation ----------------- */
 .navigation-list {
   list-style-type: none;
-  -webkit-box-pack: centered;
-  -ms-flex-pack: centered;
   justify-content: centered;
 }
 
@@ -240,7 +244,7 @@ div.highlightTextOut a {
   color: var(--secondary-color);
 }
 
-div.highlightTextOut a:before {
+div.highlightTextOut a::before {
   position: absolute;
   color: var(--tertiary-color);
   top: 0;
@@ -253,13 +257,14 @@ div.highlightTextOut a:before {
   opacity: 0;
 }
 
-div.highlightTextOut a:hover:before {
+div.highlightTextOut a:hover::before {
   transform: scale(1);
   opacity: 1;
 }
 
 /* ----------------- Projects layout -------------- */
 .grid {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
@@ -274,6 +279,12 @@ div.highlightTextOut a:hover:before {
 
 .grid__item a {
   color: var(--tertiary-color);
+}
+
+.grid__item a:focus,
+a:hover {
+  color: var(--secondary-color);
+  opacity: 0.9;
 }
 
 @media all and (max-width: 500px) {
@@ -350,6 +361,20 @@ td {
   }
 }
 
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+
+  50% {
+    fill: #fcffad;
+  }
+
+  100% {
+    fill: #f76414;
+  }
+}
+
 /* long way
 .sun {
   animation-duration: 4s;
@@ -374,9 +399,29 @@ td {
   }
 }
 
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
 /* short way: */
 .cloud-front {
   animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+
+  to {
+    transform: translate(100px, 48px);
+  }
 }
 
 @keyframes cloud-move-reverse {
