@@ -237,7 +237,6 @@ button:focus,
 
 label {
   display: block;
-  padding: 0 auto;
 }
 
 .page-header {
@@ -278,7 +277,7 @@ label {
   list-style-type: none;
   -webkit-box-pack: centered;
   -ms-flex-pack: centered;
-  justify-content: centered;
+  justify-content: center;
 }
 
 .navigation-list li {

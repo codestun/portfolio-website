@@ -207,6 +207,10 @@ button:focus,
   padding: 20px 0;
 }
 
+label {
+  display: block;
+}
+
 .page-header {
   display: flex;
   width: 100%;
