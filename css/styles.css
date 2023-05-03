@@ -207,11 +207,6 @@ button:focus,
   padding: 20px 0;
 }
 
-label {
-  display: block;
-  padding: 0 auto;
-}
-
 .page-header {
   display: flex;
   width: 100%;
@@ -241,7 +236,7 @@ label {
 /* ----------- Navigation ----------------- */
 .navigation-list {
   list-style-type: none;
-  justify-content: centered;
+  justify-content: center;
 }
 
 .navigation-list li {
