@@ -476,6 +476,37 @@ td {
   animation: 4s color-change infinite alternate linear;
 }
 
+@-webkit-keyframes rays-rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rays-rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rays {
+  -webkit-animation: 10s rays-rotate infinite linear;
+  animation: 10s rays-rotate infinite linear;
+  -webkit-transform-origin: 404px 43px;
+  transform-origin: 404px 43px;
+}
+
 @-webkit-keyframes cloud-move {
   from {
     -webkit-transform: translate(0, 50px);

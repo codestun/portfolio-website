@@ -405,6 +405,21 @@ td {
   animation: 4s color-change infinite alternate linear;
 }
 
+@keyframes rays-rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rays {
+  animation: 10s rays-rotate infinite linear;
+  transform-origin: 404px 43px;
+}
+
 @keyframes cloud-move {
   from {
     transform: translate(0, 50px);
