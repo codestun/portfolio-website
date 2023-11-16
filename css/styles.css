@@ -295,6 +295,19 @@ a:hover {
   opacity: 0.9;
 }
 
+.link-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.project-screenshot {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
 @media all and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
