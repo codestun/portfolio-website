@@ -39,31 +39,24 @@
   </header>
   <!-- Main content -->
   <main>
-    <h1 class="profile">Contact Me</h1>
+    <div class="profile">
+      <h1>Let's Connect!</h1>
+      <p>Have a question or want to work together? I'd love to hear from you!</p>
+    </div>
     <div class="form-container">
       <div class="contact-me-wrapper">
-        DK
-        <br>
-        Secret Lane 20
-        <br>
-        12345 Berlin
-        <br>
-        Germany
-        <br><br>
-        <a href="tel:+49(0)17687845445">Tel: +1 (310) 804 9904</a>
-        <br>
-        <a href="mailto:doerthy(dot)k(at)gmail(dot)com">Email: sultana-07.bodily@icloud.com</a>
+        <!-- Your static contact information if any -->
       </div>
       <div class="form-wrapper">
-        <form action="#" method="post" id="contact-form">
-          <label class="standard-label" for="contact-email">Email: </label>
-          <input type="email" id="contact-email" required="required">
+        <form action="https://formspree.io/f/mqkrpzbn" method="POST">
+          <label class="standard-label" for="name">Name: </label>
+          <input type="text" id="name" name="name" class="standard-input" required>
 
-          <label class="standard-label" for="contact-number">Telephone: </label>
-          <input type="tel" id="contact-number" required="required">
+          <label class="standard-label" for="email">Email: </label>
+          <input type="email" id="email" name="_replyto" class="standard-input" required>
 
-          <label class="form-message" for="contact-message">Message: </label>
-          <textarea id="contact-message" maxlength="240" required="required"></textarea>
+          <label class="form-message" for="message">Message: </label>
+          <textarea id="message" name="message" class="standard-textarea" required></textarea>
           <br>
           <input class="button" type="submit" value="Send message">
         </form>

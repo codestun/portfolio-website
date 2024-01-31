@@ -114,9 +114,8 @@ button:focus,
 .button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
-
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.8;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .profile {
@@ -189,7 +188,8 @@ button:focus,
 }
 
 .form-container {
-  display: flex;
+  display: block;
+  text-align: center;
   max-width: 750px;
   margin: 0 auto;
   padding: 0 40px;
@@ -198,13 +198,41 @@ button:focus,
 .contact-me-wrapper {
   flex: 1 auto;
   text-align: center;
-  padding: 20px 0;
 }
 
 .form-wrapper {
-  flex: 1 auto;
-  float: right;
-  padding: 20px 0;
+  background-color: var(--bg-white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-input,
+.standard-textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+}
+
+.standard-input:focus,
+.standard-textarea:focus {
+  border-color: var(--tertiary-color);
+  outline: none;
+}
+
+.standard-label,
+.form-message {
+  margin-bottom: 5px;
+  font-weight: var(--bold-font);
+  text-align: left;
 }
 
 label {
