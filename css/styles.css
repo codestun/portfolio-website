@@ -135,10 +135,13 @@ button:focus,
   padding: 40px 0;
 }
 
-.profile-container.profile-container__about {
-  flex-direction: column;
-  text-align: center;
-  padding: 0 40px;
+.profile-container__about {
+  background-color: var(--bg-white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 750px;
 }
 
 .portrait-wrapper {
@@ -212,6 +215,85 @@ button:focus,
 .form-wrapper form {
   display: flex;
   flex-direction: column;
+}
+
+.skills-container {
+  margin: 20px 0;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+
+.skill-bar {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  height: 20px;
+  width: 100%;
+}
+
+.skill-level {
+  background-color: #4caf50;
+  border-radius: 8px;
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.skill-bar:hover .skill-level {
+  width: 85% !important;
+
+  /* Example of dynamic interaction on hover */
+}
+
+.about-me-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  /* Allows items to wrap on smaller screens */
+  margin: 20px 0;
+  max-width: 1200px;
+
+  /* Adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-section,
+.cv-section {
+  flex: 1;
+  text-align: center;
+  margin-top: 20px;
+
+  /* This will allow each section to take equal space */
+  min-width: 300px;
+
+  /* Prevents the sections from getting too narrow */
+  padding: 0 15px;
+
+  /* Adds some spacing around each section */
+}
+
+@media (max-width: 1024px) {
+  .about-me-flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-section,
+  .cv-section {
+    flex-basis: 100%;
+    max-width: 600px;
+
+    /* Adjust for mobile layout */
+    padding: 0;
+  }
 }
 
 .standard-input,
@@ -404,6 +486,58 @@ td {
 }
 
 /* -------------- Animation City of Berlin ---------------- */
+.animated-city {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.city-animation {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s easi-in-out;
+
+  /* Slightly reduce opacity for a softer look */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* General styling for the embedded SVG within the city-wrapper */
+.city-wrapper svg {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+
+  /* Adjust the opacity of the entire SVG */
+}
+
+/* Example of targeting specific elements within the SVG, if known IDs or classes exist */
+.city-wrapper svg .specific-part {
+  fill: #ff0000;
+}
+
+.city-wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .city-wrapper {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .animated-city {
+    margin-top: 20px;
+  }
+
+  .city-animation {
+    max-width: 100%;
+  }
+}
+
 @keyframes color-change {
   0% {
     fill: #edc655;
