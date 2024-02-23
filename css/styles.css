@@ -23,6 +23,10 @@
   --bold-font: 700;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-family);
   font-weight: var(--normal-font);
@@ -30,6 +34,7 @@ body {
   line-height: var(--line-height);
   background-color: var(--main-bg-color);
   color: var(--primary-color);
+  padding-top: 125px;
 }
 
 h1,
@@ -259,8 +264,6 @@ button:focus,
   /* Allows items to wrap on smaller screens */
   margin: 20px 0;
   max-width: 1200px;
-
-  /* Adjust as needed */
   margin-left: auto;
   margin-right: auto;
 }
@@ -322,8 +325,16 @@ label {
 }
 
 .page-header {
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
@@ -335,10 +346,6 @@ label {
 .page-header .page-header__item:last-child {
   flex-grow: 1;
   text-align: right;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .logo {
@@ -456,13 +463,83 @@ a:hover {
   }
 }
 
-@media all and (max-width: 767px) {
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: var(--primary-color);
+}
+
+#hamburger-icon {
+  flex: 0 1 auto;
+}
+
+.main-navigation {
+  display: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  /* Force display regardless of inline style */
+
+  .main-navigation {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-navigation {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    height: 60px;
+  }
+}
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 767px) {
+  .hamburger {
+    display: block;
+    height: auto;
+  }
+
+  .main-navigation.open {
+    display: block;
+  }
+}
+
+@media all and (max-width: 768px) {
   .grid {
     grid-gap: 10px;
   }
 
   .profile-container {
     flex-direction: column;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .body {
+    padding-top: 115px;
   }
 }
 
@@ -526,9 +603,7 @@ td {
   .city-wrapper {
     padding: 10px 0;
   }
-}
 
-@media (max-width: 767px) {
   .animated-city {
     margin-top: 20px;
   }
