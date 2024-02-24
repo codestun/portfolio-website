@@ -276,7 +276,7 @@ button:focus,
 }
 
 .skill-level {
-  background-color: #4caf50;
+  background-color: #4db6ac;
   border-radius: 8px;
   height: 100%;
   -webkit-transition: width 0.5s ease-in-out;
@@ -409,7 +409,7 @@ label {
 }
 
 .logo {
-  height: 70px;
+  height: 65px;
   max-width: 200px;
   padding-top: 20px;
 }
@@ -429,11 +429,13 @@ label {
 
 .navigation-list li .navigation-list__item {
   display: block;
+  text-transform: uppercase;
   border-radius: 8%;
 }
 
 .navigation-list li .navigation-list__item--active {
   display: inherit;
+  text-transform: uppercase;
   background-color: var(--bg-color-links);
   border-radius: 8%;
 }
@@ -447,6 +449,50 @@ label {
 
 .navigation-list a:hover {
   color: var(--tertiary-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: var(--primary-color);
+}
+
+#hamburger-icon {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.main-navigation {
+  display: none;
+  width: 100%;
+}
+
+.page-footer {
+  clear: both;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  padding: 25px;
 }
 
 /* ----------------- Projects layout -------------- */
@@ -493,7 +539,92 @@ a:hover {
   margin-bottom: 20px;
 }
 
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    -ms-grid-columns: 1fr 10px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h3 {
+    font-size: var(--h4);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .main-navigation {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .info-wrapper {
+    padding: 0 35px;
+    margin: 0 25px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  h1 {
+    font-size: var(--h2);
+  }
+
+  h2 {
+    font-size: var(--h3);
+  }
+
+  .grid {
+    grid-gap: 10px;
+  }
+
+  .profile-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .main-navigation {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .hamburger {
+    display: block;
+    height: auto;
+  }
+
+  .main-navigation.open {
+    display: block;
+  }
+}
+
 @media all and (max-width: 500px) {
+  body {
+    padding-top: 90px;
+    font-size: 16px;
+  }
+
+  .navigation-list a {
+    padding: 4px 15px;
+  }
+
+  .page-header {
+    padding: 10px 20px;
+  }
+
+  .portrait-wrapper img {
+    max-width: 200px;
+    min-width: 100px;
+    margin-right: 25px;
+  }
+
   .grid {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -510,146 +641,43 @@ a:hover {
     text-align: center;
   }
 
-  h1 {
-    font-size: var(--h2);
-  }
-
-  h2 {
-    font-size: var(--h3);
-  }
-
   .info-wrapper {
     padding: 0 40px;
   }
 
-  .info-wrapper h1 {
-    font-size: var(--h2);
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-  .grid {
-    -ms-grid-columns: 1fr 10px 1fr;
-    grid-template-columns: 1fr 1fr;
+  .logo {
+    height: 50px;
   }
 
-  h3 {
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+  }
+
+  .navigation-list li {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 25px;
+  }
+
+  h1 {
+    font-size: var(--h3);
+  }
+
+  h2 {
     font-size: var(--h4);
   }
 }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.hamburger span {
-  display: block;
-  width: 35px;
-  height: 5px;
-  margin: 6px 0;
-  background-color: var(--primary-color);
-}
-
-#hamburger-icon {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.main-navigation {
-  display: none;
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  /* Force display regardless of inline style */
-
-  .main-navigation {
-    display: block !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .main-navigation {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background-color: #fff;
-    width: 100%;
-    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .logo {
-    height: 60px;
-  }
-}
-
-/* Show the hamburger menu on smaller screens */
-@media (max-width: 767px) {
-  .hamburger {
-    display: block;
-    height: auto;
-  }
-
-  .main-navigation.open {
-    display: block;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .grid {
-    grid-gap: 10px;
-  }
-
-  .profile-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
 @media all and (max-width: 320px) {
-  .body {
+  body {
     padding-top: 115px;
   }
-}
-
-.page-footer {
-  clear: both;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  text-align: center;
-  padding: 25px;
-}
-
-table {
-  width: 100%;
-}
-
-table,
-th,
-td {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin-top: 30px;
 }
 
 /* -------------- Animation City of Berlin ---------------- */
@@ -665,11 +693,6 @@ td {
   -webkit-transition: opacity 0.3s easi-in-out;
   -o-transition: opacity 0.3s easi-in-out;
   transition: opacity 0.3s easi-in-out;
-
-  /* Slightly reduce opacity for a softer look */
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
 }
 
 /* General styling for the embedded SVG within the city-wrapper */
@@ -677,13 +700,11 @@ td {
   max-width: 100%;
   height: auto;
   opacity: 0.8;
-
-  /* Adjust the opacity of the entire SVG */
 }
 
 /* Example of targeting specific elements within the SVG, if known IDs or classes exist */
 .city-wrapper svg .specific-part {
-  fill: #ff0000;
+  fill: #f00;
 }
 
 .city-wrapper {
@@ -749,16 +770,6 @@ td {
   }
 }
 
-/* long way
-.sun {
-  animation-duration: 4s;
-  animation-name: color-change;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-} */
-
-/* short way: */
 .sun {
   -webkit-animation: 4s color-change infinite alternate linear;
   animation: 4s color-change infinite alternate linear;
@@ -820,24 +831,6 @@ td {
   }
 }
 
-@keyframes cloud-move {
-  from {
-    -webkit-transform: translate(0, 50px);
-    transform: translate(0, 50px);
-  }
-
-  to {
-    -webkit-transform: translate(200px, 50px);
-    transform: translate(200px, 50px);
-  }
-}
-
-/* short way: */
-.cloud-front {
-  -webkit-animation: 30s cloud-move infinite alternate linear;
-  animation: 30s cloud-move infinite alternate linear;
-}
-
 @-webkit-keyframes cloud-move-reverse {
   from {
     -webkit-transform: translate(446px, 48px);
@@ -862,19 +855,11 @@ td {
   }
 }
 
-@keyframes cloud-move-reverse {
-  from {
-    -webkit-transform: translate(446px, 48px);
-    transform: translate(446px, 48px);
-  }
-
-  to {
-    -webkit-transform: translate(100px, 48px);
-    transform: translate(100px, 48px);
-  }
+.cloud-front {
+  -webkit-animation: 30s cloud-move infinite alternate linear;
+  animation: 30s cloud-move infinite alternate linear;
 }
 
-/* short way: */
 .cloud-back {
   -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
   animation: 34s cloud-move-reverse infinite alternate linear;

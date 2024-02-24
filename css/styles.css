@@ -243,7 +243,7 @@ button:focus,
 }
 
 .skill-level {
-  background-color: #4caf50;
+  background-color: #4DB6AC;
   border-radius: 8px;
   height: 100%;
   transition: width 0.5s ease-in-out;
@@ -276,6 +276,7 @@ button:focus,
 
   /* This will allow each section to take equal space */
   min-width: 300px;
+
 
   /* Prevents the sections from getting too narrow */
   padding: 0 15px;
@@ -349,7 +350,7 @@ label {
 }
 
 .logo {
-  height: 70px;
+  height: 65px;
   max-width: 200px;
   padding-top: 20px;
 }
@@ -367,11 +368,13 @@ label {
 
 .navigation-list li .navigation-list__item {
   display: block;
+  text-transform: uppercase;
   border-radius: 8%;
 }
 
 .navigation-list li .navigation-list__item--active {
   display: inherit;
+  text-transform: uppercase;
   background-color: var(--bg-color-links);
   border-radius: 8%;
 }
@@ -383,6 +386,41 @@ label {
 
 .navigation-list a:hover {
   color: var(--tertiary-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: var(--primary-color);
+}
+
+#hamburger-icon {
+  flex: 0 1 auto;
+}
+
+.main-navigation {
+  display: none;
+  width: 100%;
+}
+
+.page-footer {
+  clear: both;
+  flex-direction: column;
+  text-align: center;
+  padding: 25px;
 }
 
 /* ----------------- Projects layout -------------- */
@@ -425,34 +463,6 @@ a:hover {
   margin-bottom: 20px;
 }
 
-@media all and (max-width: 500px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: var(--h2);
-  }
-
-  h2 {
-    font-size: var(--h3);
-  }
-
-  .info-wrapper {
-    padding: 0 40px;
-  }
-
-  .info-wrapper h1 {
-    font-size: var(--h2);
-  }
-}
-
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -463,60 +473,47 @@ a:hover {
   }
 }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.hamburger span {
-  display: block;
-  width: 35px;
-  height: 5px;
-  margin: 6px 0;
-  background-color: var(--primary-color);
-}
-
-#hamburger-icon {
-  flex: 0 1 auto;
-}
-
-.main-navigation {
-  display: none;
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  /* Force display regardless of inline style */
-
+@media screen and (min-width: 769px) {
   .main-navigation {
     display: block !important;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .info-wrapper {
+    padding: 0 35px;
+    margin: 0 25px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  h1 {
+    font-size: var(--h2);
+  }
+
+  h2 {
+    font-size: var(--h3);
+  }
+
+  .grid {
+    grid-gap: 10px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+  }
+
   .main-navigation {
     display: none;
     position: absolute;
     right: 0;
     top: 100%;
     background-color: #fff;
-    width: 100%;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
-  .logo {
-    height: 60px;
-  }
-}
-
-/* Show the hamburger menu on smaller screens */
-@media (max-width: 767px) {
   .hamburger {
     display: block;
     height: auto;
@@ -527,39 +524,69 @@ a:hover {
   }
 }
 
-@media all and (max-width: 768px) {
-  .grid {
-    grid-gap: 10px;
+@media all and (max-width: 500px) {
+  body {
+    padding-top: 90px;
+    font-size: 16px;
   }
 
-  .profile-container {
+  .navigation-list a {
+    padding: 4px 15px;
+  }
+
+  .page-header {
+    padding: 10px 20px;
+  }
+
+  .portrait-wrapper img {
+    max-width: 200px;
+    min-width: 100px;
+    margin-right: 25px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    display: flex;
     flex-direction: column;
+    text-align: center;
+  }
+
+  .info-wrapper {
+    padding: 0 40px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+  }
+
+  .navigation-list li {
+    justify-content: flex-end;
+    display: flex;
+    padding-right: 25px;
+  }
+
+  h1 {
+    font-size: var(--h3);
+  }
+
+  h2 {
+    font-size: var(--h4);
   }
 }
 
 @media all and (max-width: 320px) {
-  .body {
+  body {
     padding-top: 115px;
   }
-}
-
-.page-footer {
-  clear: both;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 25px;
-}
-
-table {
-  width: 100%;
-}
-
-table,
-th,
-td {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin-top: 30px;
 }
 
 /* -------------- Animation City of Berlin ---------------- */
@@ -573,9 +600,6 @@ td {
   height: auto;
   opacity: 0.8;
   transition: opacity 0.3s easi-in-out;
-
-  /* Slightly reduce opacity for a softer look */
-  transition: opacity 0.3s ease-in-out;
 }
 
 /* General styling for the embedded SVG within the city-wrapper */
@@ -583,13 +607,11 @@ td {
   max-width: 100%;
   height: auto;
   opacity: 0.8;
-
-  /* Adjust the opacity of the entire SVG */
 }
 
 /* Example of targeting specific elements within the SVG, if known IDs or classes exist */
 .city-wrapper svg .specific-part {
-  fill: #ff0000;
+  fill: #f00;
 }
 
 .city-wrapper {
@@ -641,16 +663,6 @@ td {
   }
 }
 
-/* long way
-.sun {
-  animation-duration: 4s;
-  animation-name: color-change;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-} */
-
-/* short way: */
 .sun {
   animation: 4s color-change infinite alternate linear;
 }
@@ -680,42 +692,20 @@ td {
   }
 }
 
-@keyframes cloud-move {
+@keyframes cloud-move-reverse {
   from {
-    transform: translate(0, 50px);
+    transform: translate(446px, 48px);
   }
 
   to {
-    transform: translate(200px, 50px);
+    transform: translate(100px, 48px);
   }
 }
 
-/* short way: */
 .cloud-front {
   animation: 30s cloud-move infinite alternate linear;
 }
 
-@keyframes cloud-move-reverse {
-  from {
-    transform: translate(446px, 48px);
-  }
-
-  to {
-    transform: translate(100px, 48px);
-  }
-}
-
-@keyframes cloud-move-reverse {
-  from {
-    transform: translate(446px, 48px);
-  }
-
-  to {
-    transform: translate(100px, 48px);
-  }
-}
-
-/* short way: */
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
