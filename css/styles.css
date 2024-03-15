@@ -131,6 +131,10 @@ button:focus,
   overflow: auto;
 }
 
+p {
+  padding: 0 25px;
+}
+
 .profile-container {
   display: flex;
   justify-content: center;
@@ -223,7 +227,7 @@ button:focus,
 }
 
 .skills-container {
-  margin: 20px 0;
+  margin: 35px 0;
 }
 
 .skill {
@@ -277,11 +281,8 @@ button:focus,
   /* This will allow each section to take equal space */
   min-width: 300px;
 
-
   /* Prevents the sections from getting too narrow */
-  padding: 0 15px;
-
-  /* Adds some spacing around each section */
+  padding: 0 25px;
 }
 
 @media (max-width: 1024px) {
@@ -471,6 +472,10 @@ a:hover {
   h3 {
     font-size: var(--h4);
   }
+
+  .profile p {
+    padding: 0 50px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -525,6 +530,10 @@ a:hover {
 }
 
 @media all and (max-width: 500px) {
+  .profile p {
+    padding: 0 50px;
+  }
+
   body {
     padding-top: 90px;
     font-size: 16px;
