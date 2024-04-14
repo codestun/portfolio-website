@@ -35,6 +35,17 @@
   box-sizing: border-box;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 100px;
+
+  /* Height of your fixed header */
+  margin: -100px 0 0;
+
+  /* Negative margin to counteract the header height */
+}
+
 body {
   font-family: var(--font-family);
   font-weight: var(--normal-font);
@@ -148,7 +159,6 @@ p {
   padding: 0 25px;
 }
 
-
 .profile-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,6 +270,10 @@ p {
   flex-direction: column;
 }
 
+.section {
+  padding: 40px 20px;
+}
+
 .skills-container {
   margin: 35px 0;
 }
@@ -281,7 +295,7 @@ p {
 }
 
 .skill-level {
-  background-color: #4db6ac;
+  background-color: #4DB6AC;
   border-radius: 8px;
   height: 100%;
   -webkit-transition: width 0.5s ease-in-out;
@@ -328,8 +342,6 @@ p {
 
   /* Prevents the sections from getting too narrow */
   padding: 0 25px;
-
-  /* Adds some spacing around each section */
 }
 
 @media (max-width: 1024px) {
@@ -396,7 +408,7 @@ label {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 30px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -414,7 +426,7 @@ label {
 }
 
 .logo {
-  height: 65px;
+  height: 55px;
   max-width: 200px;
   padding-top: 20px;
 }
@@ -473,10 +485,35 @@ label {
 
 .hamburger span {
   display: block;
-  width: 35px;
-  height: 5px;
-  margin: 6px 0;
-  background-color: var(--primary-color);
+  width: 30px;
+
+  /* Width of the hamburger lines */
+  height: 4px;
+
+  /* Height of the hamburger lines */
+  margin: 4px 0;
+  background: #333;
+
+  /* Color of the hamburger lines */
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.hamburger.is-active span:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+  -ms-transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(7px, -6px);
+  -ms-transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 #hamburger-icon {
@@ -566,13 +603,18 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  :target:before {
+    height: 75px;
+    margin-top: -75px;
+  }
+
   .info-wrapper {
     padding: 0 35px;
     margin: 0 25px;
   }
 
   .logo {
-    height: 60px;
+    height: 50px;
   }
 
   h1 {
@@ -628,10 +670,6 @@ a:hover {
     padding: 4px 15px;
   }
 
-  .page-header {
-    padding: 10px 20px;
-  }
-
   .portrait-wrapper img {
     max-width: 200px;
     min-width: 100px;
@@ -660,12 +698,6 @@ a:hover {
 
   .logo {
     height: 50px;
-  }
-
-  .hamburger span {
-    width: 30px;
-    height: 4px;
-    margin: 4px 0;
   }
 
   .navigation-list li {
